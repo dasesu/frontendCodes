@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>navbar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+
+    @font-face {
+      font-family: YoungSerif;
+      src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf);
+    }
+
+    body {
+      margin: 0;
+      font-family: YoungSerif;
+      font-weight: 400;
+      background: #222;
+    }
+
+    .container {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header {
+      background: #55d6aa;
+    }
+
+    header::after {
+      content: '';
+      /* this is an old version, before flex */
+      display: table;
+      clear: both;
+    }
+
+    .logo {
+      width: 95px;
+      float: left;
+    }
+
+    nav {
+      float: right;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-left: 50px;
+      padding-top: 15px;
+      /* for wrap the absolute of nav a:hover */
+      position: relative; 
+    }
+
+    nav a {
+      color: #444;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    nav a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background-color: #444;
+      position: absolute;
+      top: 0;
+      /* start with 0 and transform to 100% */
+      width: 0; 
+      transition: all ease-in-out 150ms;
+    }
+
+    nav a:hover::before {
+      width: 100%;
+    }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img class="logo" src="assets/images/logo2.svg" alt="logo">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>    
+      </nav>
+    </div>
+  </header>
+</body>
+</html>
